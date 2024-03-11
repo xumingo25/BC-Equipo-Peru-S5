@@ -1,9 +1,10 @@
-package ejemplos;
+package S5;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SeleniumEjemplo1 {
+    /*
     public static void main(String[] args) {
         //Enlazar el driver de chrome a una propiedad de windows que me permita
         //hacer conversar el navegador de chrome con el chromedriver
@@ -18,5 +19,5 @@ public class SeleniumEjemplo1 {
 
         driver.get("https://www.google.com");
 
-    }
+    }*/
 }

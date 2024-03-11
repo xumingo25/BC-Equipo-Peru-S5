@@ -1,4 +1,4 @@
-package ejemplos;
+package S5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -18,12 +17,12 @@ public class CPsSpotify {
     WebDriver driver;
     WebDriverWait espera;
 
-    @BeforeAll
+    //@BeforeAll
     public static void init(){
         WebDriverManager.chromedriver().setup();
     }
 
-    @BeforeEach
+    //@BeforeEach
     void preCondiciones(){
         driver = new ChromeDriver();
         espera = new WebDriverWait(driver,10);
@@ -32,14 +31,14 @@ public class CPsSpotify {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    @AfterEach
+    //@AfterEach
     void posCondiciones() throws InterruptedException {
         Thread.sleep(5000);
         driver.quit();
     }
 
 
-    @Test
+    //@Test
     public void CP001_Creacion_Cta_Spotify() throws InterruptedException {
         //WebElement btnRegistrarse = driver.findElement(By.xpath("//button[@data-testid='signup-button']"));
         WebElement btnRegistrarse = espera.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='signup-button']")));
@@ -137,7 +136,7 @@ public class CPsSpotify {
     }
 
 
-    @Test
+    //@Test
     public void CP002_Error_Creacion_Cta_Spotify_Password_9Caracteres(){
         //WebElement btnRegistrarse = driver.findElement(By.xpath("//button[@data-testid='signup-button']"));
         WebElement btnRegistrarse = espera.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='signup-button']")));

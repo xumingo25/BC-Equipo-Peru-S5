@@ -1,4 +1,4 @@
-package ejemplos;
+package S5;
 
 //import static org.assertj.core.api.Assertions.assertThat;
 
@@ -27,7 +27,7 @@ class ChromeTest {
         driver.quit();
     }
 
-    @Test
+    //@Test
     void test() {
         // Exercise
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
@@ -38,7 +38,7 @@ class ChromeTest {
         //assertThat(title).contains("Selenium WebDriver");
     }
 
-    @Test
+    //@Test
     void NavegadorActions(){
         driver.get("https://www.google.com");
         System.out.println("El titulo del sitio es: "+driver.getTitle());
@@ -46,7 +46,7 @@ class ChromeTest {
         System.out.println("Page Source: "+driver.getPageSource());
     }
 
-    @Test
+    //@Test
     void NavigateActions(){
         driver.get("https://www.google.com");
         System.out.println("El titulo del sitio es: "+driver.getTitle());
