@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class BasePage {
     //Wrapper de selenium
@@ -28,6 +31,10 @@ public class BasePage {
         return driver.findElement(localizador);
     }
 
+    public List<WebElement> buscarElementosWeb(By localizador){
+        return driver.findElements(localizador);
+    }
+
     public void clic(By localizador){
         driver.findElement(localizador).click();
     }
@@ -47,6 +54,11 @@ public class BasePage {
     public WebElement esperarElementoWeb(By localizador){
         espera = new WebDriverWait(this.driver,30);
         return espera.until(ExpectedConditions.presenceOfElementLocated(localizador));
+    }
+
+    public WebElement esperarElementoWeb(WebElement elemento){
+        espera = new WebDriverWait(this.driver,30);
+        return espera.until(ExpectedConditions.visibilityOf(elemento));
     }
 
     public void cargarSitio(String url){
@@ -81,5 +93,13 @@ public class BasePage {
         return elemento.getAttribute(atributo);
     }
 
+    public boolean estaDesplegado(WebElement elemento){
+        return elemento.isDisplayed();
+    }
+
+    public void seleccionarCmbPorValue(WebElement elemento, String value){
+        Select selector = new Select(elemento);
+        selector.selectByValue(value);
+    }
 }
 
