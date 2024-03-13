@@ -17,7 +17,12 @@ dependencies {
     testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
 
     testImplementation("io.github.bonigarcia:webdrivermanager:5.7.0")
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    testImplementation 'org.apache.poi:poi:4.1.2'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    testImplementation 'org.apache.poi:poi-ooxml:4.1.2'
 }
+
 
 test {
     useJUnitPlatform()
